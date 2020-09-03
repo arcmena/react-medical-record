@@ -1,4 +1,8 @@
 import Button from './elements/Button';
-import Header from './layouts/Header';
+import Textarea from './elements/Textarea';
+import Select from './elements/Select';
 
-export { Button, Header };
+import Header from './layouts/Header';
+import RegisterForm from './layouts/RegisterForm';
+
+export { Button, Textarea, Select, Header, RegisterForm };

@@ -18,6 +18,7 @@ body {
     @import './main/layout';
 
     @import './elements/button';
+    @import './elements/forms';
 
     #root {
         display: flex;
@@ -27,6 +28,7 @@ body {
         width: 100%;
         height: auto;
         min-height: 100vh;
+        overflow: hidden;
         background: $grayish;
     }
 }

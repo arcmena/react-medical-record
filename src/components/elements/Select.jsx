@@ -2,29 +2,38 @@ import React from 'react';
 import { TextField, MenuItem } from '@material-ui/core';
 import PropTypes from 'prop-types';
 
-const Select = ({ label, value, handleChange, options }) => {
+const Select = ({ label, value, onChange, options }) => {
     return (
-        <TextField
-            select
-            label={label}
-            value={value}
-            onChange={handleChange}
-            helperText="Selecione um"
-            variant="outlined"
-        >
-            {options.map((option) => (
-                <MenuItem key={option.value} value={option.id}>
-                    {option.label}
-                </MenuItem>
-            ))}
-        </TextField>
+        <>
+            <TextField
+                variant="outlined"
+                select
+                value={value}
+                onChange={onChange}
+                label={label}
+                className="select"
+            >
+                {options.map((option) => (
+                    <MenuItem key={option.id} value={option.id}>
+                        {option.label}
+                    </MenuItem>
+                ))}
+            </TextField>
+        </>
     );
 };
 
 Select.propTypes = {
     label: PropTypes.string,
-    value: PropTypes.string,
-    handleChange: PropTypes.func.isRequired,
+    value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(
+            PropTypes.shape({
+                id: PropTypes.number,
+            }),
+        ),
+    ]),
+    onChange: PropTypes.func.isRequired,
     options: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number,
@@ -34,9 +43,9 @@ Select.propTypes = {
 };
 
 Select.defaultProps = {
-    label: 'Select',
-    value: '',
-    options: [],
+    label: '',
+    value: undefined,
+    options: [{ id: 1, label: 'Example' }],
 };
 
 export default Select;

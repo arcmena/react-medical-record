@@ -1,0 +1,75 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.register-form {
+    background: $white;
+    width: 85%;
+    max-width: 85%;
+
+    margin: 0 1rem;
+
+    border-radius: 7px;
+
+    .title {
+        display: flex;
+        align-items: center;
+        width: 91%;
+
+        height: 2.3rem;
+
+        border-radius: 7px 7px 0 0;
+        margin-bottom: 1.4rem;
+        padding: 0 1rem;
+
+        font-family: Raleway;
+        font-weight: 400;
+        color: $black;
+
+        background: $blue;
+    }
+
+    button {
+        width: 80%;
+        margin: 1rem;
+    }
+
+    .select {
+        min-width: 80%;
+        margin-bottom: 1rem;
+    }
+
+    .textarea {
+        min-width: 80%;
+    }
+
+    .multiple {
+        max-width: 20rem;
+        height: 3.2rem;
+        margin-bottom: 2rem;
+
+        .chips {
+            background: $blue;
+            font-family: Raleway;
+            font-weight: 400;
+            color: $black;
+        }
+    }
+
+    .lbl {
+        margin-bottom: 0.5rem;
+    }
+
+    h1 {
+        color: $primary;
+        font-family: Raleway;
+        font-weight: 600;
+
+        max-width: 70%;
+        text-align: center;
+
+        margin-top: 2rem;
+    }
+}
