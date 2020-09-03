@@ -1,0 +1,25 @@
+header {
+    min-width: 100vw;
+    height: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 1.3rem;
+    color: $black;
+
+    background: $white;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    a {
+        text-decoration: none;
+    }
+}

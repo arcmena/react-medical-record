@@ -1,0 +1,16 @@
+.button {
+    height: 3rem;
+
+    font-family: Raleway;
+    font-weight: 600;
+    color: $black;
+}
+
+.primary {
+    background: $primary;
+    color: $white;
+
+    &:hover {
+        background: $primary-darker;
+    }
+}

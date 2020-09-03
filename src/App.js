@@ -1,10 +1,21 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+
+import { Header } from './components';
+import Home from './views/Home';
+import Register from './views/Register';
 
 function App() {
     return (
-        <div className="App">
-            <h1>Prontuario</h1>
-        </div>
+        <>
+            <Header />
+            <main>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/register" component={Register} />
+                </Switch>
+            </main>
+        </>
     );
 }
 

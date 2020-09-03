@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import { Button } from '@material-ui/core';
 
-const Btn = ({ children }) => {
+const Btn = ({ color, children }) => {
     return (
-        <Button>
+        <Button className={`button ${color}`}>
             <span>{children}</span>
         </Button>
     );
 };
 
 Btn.propTypes = {
-    children: PropTypes.node,
+    color: PropTypes.string,
+    children: ReactNode,
 };
 
 Btn.defaultProps = {
-    children: PropTypes.node,
+    color: '',
+    children: React.createElement('span'),
 };
 
 export default Btn;
