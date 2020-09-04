@@ -11,9 +11,9 @@ import './Record.scss';
 const date = (date) => {
     const data = moment(date)
         .locale('pt-br')
-        .format('d MMM YYYY')
+        .format('D MMM YYYY')
         .toUpperCase();
-    const hora = moment(date).locale('pt-br').format('HH:mm');
+    const hora = moment(date).format('HH:mm');
     return { data, hora };
 };
 

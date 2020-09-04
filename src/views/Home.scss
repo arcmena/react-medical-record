@@ -7,3 +7,9 @@ h1 {
     font-weight: 500;
     color: $black;
 }
+
+.fraction {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
