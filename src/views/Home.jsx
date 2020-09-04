@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import { landingVariants } from '../assets/utils/animations';
+import { homeVariants } from '../assets/utils/animations';
 import { Button, Record } from '../components';
 import { RecordContext } from '../config/contexts/RecordContext';
 
@@ -16,7 +16,7 @@ const Home = () => {
             initial="out"
             animate="in"
             exit="out"
-            variants={landingVariants}
+            variants={homeVariants}
             className="fraction"
         >
             <section>
