@@ -9,7 +9,7 @@ import { RegisterForm } from '../components';
 const Register = () => {
     const history = useHistory();
     return (
-        <motion.fraction
+        <motion.div
             initial="out"
             animate="in"
             exit="out"
@@ -20,7 +20,7 @@ const Register = () => {
                 <KeyboardBackspace onClick={() => history.goBack()} />
             </div>
             <RegisterForm />
-        </motion.fraction>
+        </motion.div>
     );
 };
 

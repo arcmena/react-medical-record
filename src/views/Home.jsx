@@ -12,7 +12,7 @@ const Home = () => {
     const { records } = useContext(RecordContext);
 
     return (
-        <motion.fraction
+        <motion.div
             initial="out"
             animate="in"
             exit="out"
@@ -31,7 +31,7 @@ const Home = () => {
             <Link to="/register">
                 <Button color="primary">Adicionar novo prontuário</Button>
             </Link>
-        </motion.fraction>
+        </motion.div>
     );
 };
 
