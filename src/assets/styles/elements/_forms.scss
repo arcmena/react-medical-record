@@ -7,7 +7,7 @@ form {
 .register-form {
     background: $white;
     width: 85%;
-    max-width: 85%;
+    max-width: calc(100% - 2.3rem);
 
     margin: 0 1rem;
 
@@ -16,7 +16,8 @@ form {
     .title {
         display: flex;
         align-items: center;
-        width: 91%;
+        // width: 100%;
+        width: calc(100% - 2rem);
 
         height: 2.3rem;
 
@@ -46,7 +47,7 @@ form {
     }
 
     .multiple {
-        max-width: 20rem;
+        // max-width: 20rem;
         height: 3.2rem;
         margin-bottom: 2rem;
 

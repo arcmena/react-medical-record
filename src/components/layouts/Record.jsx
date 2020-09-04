@@ -1,33 +1,58 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Card, CardContent, Chip } from '@material-ui/core';
 import PropTypes from 'prop-types';
+import moment from 'moment';
+import 'moment/locale/pt-br';
 
 import { Timer } from '../../assets/icons';
 
 import './Record.scss';
 
+const date = (date) => {
+    const data = moment(date)
+        .locale('pt-br')
+        .format('d MMM YYYY')
+        .toUpperCase();
+    const hora = moment(date).locale('pt-br').format('HH:mm');
+    return { data, hora };
+};
+
 const Record = ({ info }) => {
+    const [hora, setHora] = useState();
+    const [data, setData] = useState();
+
+    useEffect(() => {
+        const baseDate = info.created_at;
+        setData(date(baseDate).data);
+        setHora(date(baseDate).hora);
+    }, []);
+
     return (
         <div className="prontuario">
-            <div className="date">24 AGO 2020</div>
+            <div className="date">{data}</div>
             <Card className="card">
                 <div className="card-header">
                     <div className="header time">
                         <Timer />
-                        18:41
+                        {hora}
                     </div>
                     <div className="header title">Anamnese</div>
                 </div>
-                <CardContent>
+                <CardContent className="card-content">
                     <span>Queixa principal</span>
-                    <p>Vomito</p>
+                    <p>{info.queixa.label}</p>
                     <span>Doenças Adulto</span>
                     <div>
-                        <Chip label="Diabetes" className="chips" />
-                        <Chip label="Cancer" className="chips" />
+                        {info.doencas.map((info) => (
+                            <Chip
+                                label={info.label}
+                                key={info.id}
+                                className="chips"
+                            />
+                        ))}
                     </div>
                     <span>Historico de Molestia</span>
-                    <p>Fortes dores de cabeca ha uma semana</p>
+                    <p>{info.historico}</p>
                 </CardContent>
             </Card>
         </div>
@@ -35,25 +60,21 @@ const Record = ({ info }) => {
 };
 
 Record.propTypes = {
-    info: PropTypes.objectOf(
-        PropTypes.shape({
-            historico: PropTypes.string,
-            queixa: PropTypes.objectOf(
-                PropTypes.shape({
-                    label: PropTypes.string,
-                    id: PropTypes.number,
-                }),
-            ),
-            doencas: PropTypes.arrayOf(
-                PropTypes.shape({
-                    label: PropTypes.string,
-                    id: PropTypes.number,
-                }),
-            ),
-            created_at: PropTypes.string,
-            _id: PropTypes.string,
+    info: PropTypes.shape({
+        historico: PropTypes.string,
+        queixa: PropTypes.shape({
+            label: PropTypes.string,
+            id: PropTypes.number,
         }),
-    ),
+        doencas: PropTypes.arrayOf(
+            PropTypes.shape({
+                label: PropTypes.string,
+                id: PropTypes.number,
+            }),
+        ),
+        created_at: PropTypes.string,
+        _id: PropTypes.string,
+    }),
 };
 
 Record.defaultProps = {

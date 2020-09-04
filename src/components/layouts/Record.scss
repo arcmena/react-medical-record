@@ -4,19 +4,21 @@
     display: flex;
     margin: 0 auto 1.5rem;
 
-    max-width: calc(100% - 2.3rem);
+    width: calc(100vw - 3rem);
 
     font-family: Raleway;
 
     .date {
-        max-width: 3rem;
+        width: 3rem;
         text-align: center;
         font-weight: 500;
-        padding-top: 0.7rem;
+        font-size: 1.14rem;
+        padding: 0.7rem 0.7rem;
         color: $blue-even-darker;
     }
 
     .card {
+        width: 100%;
         .card-header {
             .header {
                 display: flex;
