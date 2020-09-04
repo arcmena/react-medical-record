@@ -5,11 +5,15 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import RecordProvider from './config/contexts/RecordContext';
+
 import './assets/styles/root.scss';
 
 ReactDOM.render(
     <Router>
-        <App />
+        <RecordProvider>
+            <App />
+        </RecordProvider>
     </Router>,
     document.getElementById('root'),
 );

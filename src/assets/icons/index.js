@@ -1,1 +1,1 @@
-export { Done } from '@material-ui/icons';
+export { Done, Timer, KeyboardBackspace } from '@material-ui/icons';

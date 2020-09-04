@@ -6,6 +6,7 @@ import MultiSelect from './elements/MultipleSelect';
 import Header from './layouts/Header';
 import RegisterForm from './layouts/RegisterForm';
 import Backdrop from './layouts/Backdrop';
+import Record from './layouts/Record';
 
 export {
     Button,
@@ -15,4 +16,5 @@ export {
     Header,
     RegisterForm,
     Backdrop,
+    Record,
 };

@@ -32,6 +32,7 @@
     ],
     "rules": {
         "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-        "import/no-cycle": 0
+        "import/no-cycle": 0,
+        "no-shadow": 0
     }
 }

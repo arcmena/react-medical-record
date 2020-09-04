@@ -1,7 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Button, Select, Textarea, MultiSelect, Backdrop } from '..';
+
+import { RecordContext } from '../../config/contexts/RecordContext';
 
 import api from '../../services/api';
 
@@ -9,6 +11,8 @@ const serverError =
     'Houve algum problema com o servidor e não conseguimos carregar certos dados.';
 
 const RegisterForm = () => {
+    const { records, setRecords } = useContext(RecordContext);
+
     const [doencas, setDoencas] = useState([]);
     const [queixas, setQueixas] = useState([]);
 
@@ -21,6 +25,7 @@ const RegisterForm = () => {
 
     const [open, setOpen] = useState(false);
 
+    // eslint-disable-next-line no-unused-vars
     const history = useHistory();
 
     useEffect(() => {
@@ -64,18 +69,14 @@ const RegisterForm = () => {
             historico,
         };
 
-        console.log(data);
-
         api.post('/prontuario', data)
-            .then(({ data }) => {
-                localStorage.prontuarios = [data];
-                console.log(data);
-            })
+            .then(({ data }) => setRecords([...records, data]))
+            // eslint-disable-next-line no-console
             .catch((error) => console.log(error));
 
-        // setTimeout(() => {
-        //     history.push('/');
-        // }, 3000);
+        setTimeout(() => {
+            history.push('/');
+        }, 3000);
     };
 
     return (

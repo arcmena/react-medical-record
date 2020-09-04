@@ -20,7 +20,7 @@ main {
     align-items: center;
 
     min-width: 100%;
-    padding: 1.3rem 1.7rem;
+    padding: 1.7rem;
 
     a {
         text-decoration: none;
@@ -50,4 +50,10 @@ main {
         opacity: 1;
         pointer-events: all;
     }
+}
+
+.back-icon {
+    margin-right: auto;
+    padding: 0 0 0.7rem 2rem;
+    cursor: pointer;
 }
