@@ -55,4 +55,8 @@
             background: $blue;
         }
     }
+
+    @media (min-width: 768px) {
+        max-width: 690px;
+    }
 }

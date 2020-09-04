@@ -43,15 +43,15 @@ const Record = ({ info }) => {
                     <p>{info.queixa.label}</p>
                     <span>Doenças Adulto</span>
                     <div>
-                        {info.doencas.map((info) => (
+                        {info.doencas.map((item) => (
                             <Chip
-                                label={info.label}
-                                key={info.id}
+                                label={item.label}
+                                key={item.id}
                                 className="chips"
                             />
                         ))}
                     </div>
-                    <span>Historico de Molestia</span>
+                    <span>Histórico da Moléstia</span>
                     <p>{info.historico}</p>
                 </CardContent>
             </Card>
